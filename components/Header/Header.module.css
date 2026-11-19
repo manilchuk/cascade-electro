@@ -1,0 +1,200 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+    height: 60px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001; /* Щоб логотип був над мобільним меню */
+}
+
+.logoImage {
+  height: 32px;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .logoImage {
+    height: 40px;
+  }
+}
+
+.nav {
+  display: none;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .nav {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+/* Блок контактів (телефон + кнопка) */
+.contactBlock {
+  display: none; /* Ховаємо на мобільних */
+  align-items: center;
+  gap: 24px;
+}
+
+@media (min-width: 992px) {
+  .contactBlock {
+    display: flex;
+  }
+}
+
+.phone {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+  white-space: nowrap;
+}
+
+.btn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .burger {
+    display: none;
+  }
+}
+
+.burgerLine {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-dark);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burgerOpen .burgerLine:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.burgerOpen .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+.burgerOpen .burgerLine:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  padding: 100px 24px 40px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.mobileNavLink {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mobileContactBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.mobilePhone {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  text-align: center;
+}
+
+.mobileBtn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  text-align: center;
+  width: 100%;
+}

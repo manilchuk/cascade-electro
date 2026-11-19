@@ -1,69 +1,47 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Header from "@/components/Header/Header";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main style={{ paddingTop: "80px" }}>
+      {" "}
+      {/* Відступ під фіксований хедер */}
+      <Header />
+      {/* Секція 1: Hero (Білий фон) */}
+      <section
+        id="hero"
+        style={{
+          height: "100vh",
+          backgroundColor: "var(--color-white)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <h1>Секція Hero (Тут буде фон hero.png)</h1>
+      </section>
+      {/* Секція 2: Каталог (Світло-сірий фон) */}
+      <section
+        id="catalog"
+        style={{ height: "100vh", backgroundColor: "var(--color-light-gray)" }}
+      >
+        <h2 style={{ textAlign: "center", paddingTop: "4rem" }}>Каталог</h2>
+      </section>
+      {/* Секція 3: Переваги (Білий фон) */}
+      <section
+        id="advantages"
+        style={{ height: "100vh", backgroundColor: "var(--color-white)" }}
+      >
+        <h2 style={{ textAlign: "center", paddingTop: "4rem" }}>Переваги</h2>
+      </section>
+      {/* Секція 4: Про компанію (Світло-сірий фон) */}
+      <section
+        id="about"
+        style={{ height: "100vh", backgroundColor: "var(--color-light-gray)" }}
+      >
+        <h2 style={{ textAlign: "center", paddingTop: "4rem" }}>
+          Про компанію
+        </h2>
+      </section>
+    </main>
   );
 }
