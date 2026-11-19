@@ -14,7 +14,6 @@ export default function Header() {
     } else {
       document.body.classList.remove("no-scroll");
     }
-
     return () => {
       document.body.classList.remove("no-scroll");
     };
@@ -33,10 +32,16 @@ export default function Header() {
 
     if (window.location.pathname === "/") {
       e.preventDefault();
+
+      // Скролимо догори
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
+
+      // ВАЖЛИВО: Очищаємо хеш з URL, щоб якірні посилання працювали знову
+      // Використовуємо replaceState, щоб не додавати новий запис в історію браузера
+      window.history.replaceState(null, "", window.location.pathname);
     }
   };
 

@@ -1,22 +1,15 @@
 import Header from "@/components/Header/Header";
-import Hero from "@/components/Hero/Hero"; // Додаємо імпорт
+import Hero from "@/components/Hero/Hero";
+import Catalog from "@/components/Catalog/Catalog"; // Додаємо імпорт
 
 export default function Home() {
   return (
     <main>
       <Header />
+
       <Hero />
 
-      {/* Секція 2: Каталог (Світло-сірий фон) */}
-      <section
-        id="catalog"
-        style={{
-          height: "100vh",
-          backgroundColor: "var(--color-light-gray)",
-        }}
-      >
-        <h2 style={{ textAlign: "center", paddingTop: "4rem" }}>Каталог</h2>
-      </section>
+      <Catalog />
 
       {/* Секція 3: Переваги (Білий фон) */}
       <section
