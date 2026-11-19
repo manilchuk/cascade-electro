@@ -8,7 +8,6 @@ import styles from "./Header.module.css";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Блокування скролу через додавання класу до body
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add("no-scroll");
@@ -16,7 +15,6 @@ export default function Header() {
       document.body.classList.remove("no-scroll");
     }
 
-    // Очищення при розмонтуванні
     return () => {
       document.body.classList.remove("no-scroll");
     };
@@ -30,10 +28,22 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    closeMenu();
+
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo} onClick={closeMenu}>
+        <Link href="/" className={styles.logo} onClick={handleLogoClick}>
           <Image
             src="/logo.svg"
             alt="Cascade Electro Logo"
