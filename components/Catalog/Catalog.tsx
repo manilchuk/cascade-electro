@@ -21,19 +21,19 @@ const categories = [
   {
     id: 3,
     title: "Трансформатор понижуючий",
-    image: null,
+    image: "/Catalog/step-down-transformer.webp",
     placeholder: "🔋",
   },
   {
     id: 4,
     title: "Вимірювальні трансформатори струму",
-    image: null,
+    image: "/Catalog/current-transformer1.webp",
     placeholder: "📊",
   },
   {
     id: 5,
     title: "Трансформатори прогріву бетону",
-    image: null,
+    image: "/Catalog/concrete-heating-station.webp",
     placeholder: "🏗️",
   },
   {
