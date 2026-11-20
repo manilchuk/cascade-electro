@@ -1,8 +1,8 @@
 /* --- Секція форми внизу сторінки --- */
 .section {
-  background-color: var(--color-dark);
+  background-color: var(--color-light-gray); /* Змінили на світло-сірий */
   padding: 80px 0;
-  color: var(--color-white);
+  color: var(--color-dark); /* Змінили на темний текст */
 }
 
 .container {
@@ -33,7 +33,7 @@
 
 .subtitle {
   font-size: 1.125rem;
-  color: #9ca3af;
+  color: var(--color-gray); /* Змінили на сірий */
   margin-bottom: 32px;
 }
 
@@ -54,28 +54,31 @@
 .label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #d1d5db;
+  color: var(--color-dark); /* Змінили на темний */
 }
 
 .input {
   width: 100%;
   padding: 14px 16px;
   border-radius: 8px;
-  border: 1px solid #374151;
-  background-color: #111827;
-  color: var(--color-white);
+  border: 1px solid #d1d5db; /* Світло-сіра рамка */
+  background-color: var(--color-white); /* Білий фон полів */
+  color: var(--color-dark);
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .input:focus {
   outline: none;
   border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1); /* Легке зелене світіння */
 }
 
 .input::placeholder {
-  color: #6b7280;
+  color: #9ca3af;
 }
 
 .textarea {
@@ -139,7 +142,7 @@
 .fabIcon {
   width: 28px;
   height: 28px;
-  fill: currentColor; /* Успадковує білий колір */
+  fill: currentColor;
 }
 
 /* --- Модальне вікно --- */
