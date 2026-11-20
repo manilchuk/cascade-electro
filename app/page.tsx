@@ -3,8 +3,10 @@ import Hero from "@/components/Hero/Hero";
 import Catalog from "@/components/Catalog/Catalog";
 import Advantages from "@/components/Advantages/Advantages";
 import About from "@/components/About/About";
-import ContactForm from "@/components/Contact/ContactForm";
+import HowToOrder from "@/components/HowToOrder/HowToOrder";
+import DeliveryPayment from "@/components/DeliveryPayment/DeliveryPayment";
 import Contacts from "@/components/Contacts/Contacts";
+import ContactForm from "@/components/Contact/ContactForm";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
@@ -16,6 +18,8 @@ export default function Home() {
         <Catalog />
         <Advantages />
         <About />
+        <HowToOrder />
+        <DeliveryPayment />
         <Contacts />
         <ContactForm />
       </main>
