@@ -5,6 +5,8 @@ import Advantages from "@/components/Advantages/Advantages";
 import About from "@/components/About/About";
 import HowToOrder from "@/components/HowToOrder/HowToOrder";
 import DeliveryPayment from "@/components/DeliveryPayment/DeliveryPayment";
+import FAQ from "@/components/FAQ/FAQ";
+import DownloadCatalog from "@/components/DownloadCatalog/DownloadCatalog";
 import Contacts from "@/components/Contacts/Contacts";
 import ContactForm from "@/components/Contact/ContactForm";
 import Footer from "@/components/Footer/Footer";
@@ -20,6 +22,8 @@ export default function Home() {
         <About />
         <HowToOrder />
         <DeliveryPayment />
+        <FAQ />
+        <DownloadCatalog />
         <Contacts />
         <ContactForm />
       </main>
