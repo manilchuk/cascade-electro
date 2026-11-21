@@ -87,19 +87,19 @@ const categories = [
   {
     id: 14,
     title: "Розумний дім",
-    image: null,
+    image: "/Catalog/smart-home.webp",
     placeholder: "🏠",
   },
   {
     id: 15,
     title: "Блоки аварійного живлення",
-    image: null,
+    image: "/Catalog/emergency-power-supply-unit.webp",
     placeholder: "🚨",
   },
   {
     id: 16,
     title: "Подарунки від 3000 грн.",
-    image: null,
+    image: "/Catalog/gifts.webp",
     placeholder: "🎁",
   },
 ];
