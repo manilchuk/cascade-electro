@@ -99,7 +99,7 @@ const categories = [
   {
     id: 16,
     title: "Подарунки від 3000 грн.",
-    image: "/Catalog/gifts.webp",
+    image: "/Catalog/gifts1.webp",
     placeholder: "🎁",
   },
 ];

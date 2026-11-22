@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./About.module.css";
 
 // Іконка галочки для списку
@@ -73,10 +74,15 @@ export default function About() {
             </ul>
           </div>
 
-          {/* Блок для майбутнього фото */}
+          {/* Блок з фото */}
           <div className={styles.imageWrapper}>
-            {/* Тут пізніше буде <Image src="/your-image.jpg" alt="..." fill /> */}
-            <span>Тут буде ваше фото (склад або команда)</span>
+            <Image
+              src="/warehouse.webp"
+              alt="Склад компанії Каскад Електро"
+              fill
+              className={styles.aboutImage}
+              sizes="(max-width: 992px) 100vw, 50vw"
+            />
           </div>
         </div>
 
