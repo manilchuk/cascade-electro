@@ -67,42 +67,24 @@ export default function DeliveryPayment() {
               <li className={styles.listItem}>
                 <CheckIcon />
                 <div>
-                  <strong>Нова Пошта</strong> —{" "}
-                  <span className={styles.highlight}>безкоштовно</span> при
-                  замовленні від 20 000 ₴. (Оплата за тарифами перевізника).
+                  <strong>Нова Пошта, SAT, Делівері</strong> — доставка за
+                  тарифами перевізника.
                 </div>
               </li>
               <li className={styles.listItem}>
                 <CheckIcon />
                 <div>
-                  <strong>Доставка кур'єром</strong> —{" "}
-                  <span className={styles.highlight}>безкоштовно</span> при
-                  замовленні від 10 000 ₴ (по місту Києву та області до 30 км за
-                  рахунок компанії).
+                  <strong>Кур'єром по Києву</strong> — адресна доставка.
                 </div>
               </li>
               <li className={styles.listItem}>
                 <CheckIcon />
                 <div>
-                  <strong>Делівері</strong> — доставка за тарифами перевізника.
-                </div>
-              </li>
-              <li className={styles.listItem}>
-                <CheckIcon />
-                <div>
-                  <strong>Укрпошта</strong> — доставка за тарифами перевізника.
-                </div>
-              </li>
-              <li className={styles.listItem}>
-                <CheckIcon />
-                <div>
-                  <strong>Самовивіз</strong> — з нашого офісу у Києві.
+                  <strong>Самовивіз</strong> — з нашого офісу або складу у
+                  Вишневому.
                 </div>
               </li>
             </ul>
-            <p className={styles.note}>
-              * Доставка здійснюється тільки по передоплаті.
-            </p>
           </div>
 
           {/* Оплата */}
@@ -115,27 +97,20 @@ export default function DeliveryPayment() {
               <li className={styles.listItem}>
                 <CheckIcon />
                 <div>
-                  <strong>Післяплата</strong> — оплата при отриманні.
+                  <strong>Оплата на рахунок ФОП</strong> — безготівковий
+                  розрахунок.
                 </div>
               </li>
               <li className={styles.listItem}>
                 <CheckIcon />
                 <div>
-                  <strong>Оплата на рахунок</strong> — безготівковий розрахунок
-                  для юридичних осіб.
+                  <strong>Безготівковий з ПДВ</strong> — для юридичних осіб.
                 </div>
               </li>
               <li className={styles.listItem}>
                 <CheckIcon />
                 <div>
-                  <strong>Готівкою</strong> — при самовивозі з офісу.
-                </div>
-              </li>
-              <li className={styles.listItem}>
-                <CheckIcon />
-                <div>
-                  <strong>Безготівковий розрахунок з ПДВ</strong> — для
-                  підприємств.
+                  <strong>Готівкою</strong> — при самовивозі або кур'єру.
                 </div>
               </li>
             </ul>

@@ -61,20 +61,6 @@ const ClockIcon = () => (
   </svg>
 );
 
-const ChatIcon = () => (
-  <svg
-    className={styles.icon}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-  </svg>
-);
-
 export default function Contacts() {
   return (
     <section className={styles.section} id="contacts">
@@ -89,31 +75,201 @@ export default function Contacts() {
         <div className={styles.grid}>
           {/* Ліва колонка: Інформація */}
           <div className={styles.infoList}>
-            {/* Адреса */}
+            {/* Адреси */}
             <div className={styles.infoItem}>
               <div className={styles.iconWrapper}>
                 <MapPinIcon />
               </div>
               <div className={styles.infoContent}>
-                <h3>Адреса офісу та складу</h3>
-                <p>вул. Шовковична, буд. 13/2, офіс 11</p>
-                <p>Київ, Україна</p>
+                <h3>Адреси офісу та складу</h3>
+                <div className={styles.addressBlock}>
+                  <p>
+                    <strong>Офіс:</strong> вул. Шовковична, буд. 13/2, офіс 11,
+                    Київ
+                  </p>
+                  <p>
+                    <strong>Склад:</strong> вулиця Машинобудівників, буд.23,
+                    прим.4, Вишневе (Київська область)
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Телефони */}
+            {/* Менеджери */}
             <div className={styles.infoItem}>
               <div className={styles.iconWrapper}>
                 <PhoneIcon />
               </div>
               <div className={styles.infoContent}>
-                <h3>Телефони</h3>
-                <p>
-                  <a href="tel:+380952429114">+38 (095) 242-91-14</a>
-                </p>
-                <p>
-                  <a href="tel:+380981117018">+38 (098) 111-70-18</a>
-                </p>
+                <h3>Менеджери</h3>
+                <ul className={styles.managersList}>
+                  {/* Менеджер 1 */}
+                  <li className={styles.managerItem}>
+                    <div className={styles.managerPhone}>
+                      <a href="tel:+380501445993">+380 (50) 144 59 93</a>
+                      <span className={styles.managerName}>Олена Ятманова</span>
+                    </div>
+                    <div className={styles.messengerIcons}>
+                      <a
+                        href="viber://chat?number=%2B380501445993"
+                        className={styles.messengerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Viber Олена"
+                      >
+                        <Image
+                          src="/Contacts/viber1.webp"
+                          alt="Viber"
+                          width={20}
+                          height={20}
+                          className={styles.messengerImage}
+                        />
+                      </a>
+                      <a
+                        href="https://wa.me/380501445993"
+                        className={styles.messengerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp Олена"
+                      >
+                        <Image
+                          src="/Contacts/whatsapp.webp"
+                          alt="WhatsApp"
+                          width={20}
+                          height={20}
+                          className={styles.messengerImage}
+                        />
+                      </a>
+                      <a
+                        href="https://t.me/+380501445993"
+                        className={styles.messengerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Telegram Олена"
+                      >
+                        <Image
+                          src="/Contacts/telegram.webp"
+                          alt="Telegram"
+                          width={20}
+                          height={20}
+                          className={styles.messengerImage}
+                        />
+                      </a>
+                    </div>
+                  </li>
+
+                  {/* Менеджер 2 */}
+                  <li className={styles.managerItem}>
+                    <div className={styles.managerPhone}>
+                      <a href="tel:+380952429114">+380 (95) 242 91 14</a>
+                      <span className={styles.managerName}>
+                        Дмитро Ковальчук
+                      </span>
+                    </div>
+                    <div className={styles.messengerIcons}>
+                      <a
+                        href="viber://chat?number=%2B380952429114"
+                        className={styles.messengerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Viber Дмитро"
+                      >
+                        <Image
+                          src="/Contacts/viber1.webp"
+                          alt="Viber"
+                          width={20}
+                          height={20}
+                          className={styles.messengerImage}
+                        />
+                      </a>
+                      <a
+                        href="https://wa.me/380952429114"
+                        className={styles.messengerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp Дмитро"
+                      >
+                        <Image
+                          src="/Contacts/whatsapp.webp"
+                          alt="WhatsApp"
+                          width={20}
+                          height={20}
+                          className={styles.messengerImage}
+                        />
+                      </a>
+                      <a
+                        href="https://t.me/+380952429114"
+                        className={styles.messengerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Telegram Дмитро"
+                      >
+                        <Image
+                          src="/Contacts/telegram.webp"
+                          alt="Telegram"
+                          width={20}
+                          height={20}
+                          className={styles.messengerImage}
+                        />
+                      </a>
+                    </div>
+                  </li>
+
+                  {/* Менеджер 3 */}
+                  <li className={styles.managerItem}>
+                    <div className={styles.managerPhone}>
+                      <a href="tel:+380660085654">+380 (66) 008 56 54</a>
+                      <span className={styles.managerName}>Любов Левченко</span>
+                    </div>
+                    <div className={styles.messengerIcons}>
+                      <a
+                        href="viber://chat?number=%2B380660085654"
+                        className={styles.messengerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Viber Любов"
+                      >
+                        <Image
+                          src="/Contacts/viber1.webp"
+                          alt="Viber"
+                          width={20}
+                          height={20}
+                          className={styles.messengerImage}
+                        />
+                      </a>
+                      <a
+                        href="https://wa.me/380660085654"
+                        className={styles.messengerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp Любов"
+                      >
+                        <Image
+                          src="/Contacts/whatsapp.webp"
+                          alt="WhatsApp"
+                          width={20}
+                          height={20}
+                          className={styles.messengerImage}
+                        />
+                      </a>
+                      <a
+                        href="https://t.me/+380660085654"
+                        className={styles.messengerLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Telegram Любов"
+                      >
+                        <Image
+                          src="/Contacts/telegram.webp"
+                          alt="Telegram"
+                          width={20}
+                          height={20}
+                          className={styles.messengerImage}
+                        />
+                      </a>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -139,50 +295,8 @@ export default function Contacts() {
               </div>
               <div className={styles.infoContent}>
                 <h3>Графік роботи</h3>
-                <p>Пн - Пт: 9:00 - 18:00</p>
+                <p>Пн - Пт: 9:00 - 17:30</p>
                 <p>Сб - Нд: вихідний</p>
-              </div>
-            </div>
-
-            {/* Месенджери */}
-            <div className={styles.infoItem}>
-              <div className={styles.iconWrapper}>
-                <ChatIcon />
-              </div>
-              <div className={styles.infoContent}>
-                <h3>Месенджери</h3>
-                <div className={styles.messengers}>
-                  <a
-                    href="viber://chat?number=%2B380952429114"
-                    className={styles.messengerLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Написати у Viber"
-                  >
-                    <Image
-                      src="/Contacts/viber.webp"
-                      alt="Viber"
-                      width={50}
-                      height={50}
-                      className={`${styles.messengerImage} ${styles.viberImage}`}
-                    />
-                  </a>
-                  <a
-                    href="https://wa.me/380952429114"
-                    className={styles.messengerLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Написати у WhatsApp"
-                  >
-                    <Image
-                      src="/Contacts/whats-app.webp"
-                      alt="WhatsApp"
-                      width={48}
-                      height={48}
-                      className={styles.messengerImage}
-                    />
-                  </a>
-                </div>
               </div>
             </div>
           </div>
