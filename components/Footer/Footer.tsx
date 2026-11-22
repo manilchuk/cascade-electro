@@ -76,7 +76,7 @@ export default function Footer() {
         {/* Нижня частина */}
         <div className={styles.bottomBar}>
           <div className={styles.requisites}>
-            ТОВ «Каскад Електро» • ЄДРПОУ 00000000 (додайте реальний код)
+            ТОВ «Каскад Електро» • ЄДРПОУ 44133367
           </div>
           <div className={styles.copyright}>
             <span>© {new Date().getFullYear()} Всі права захищені.</span>
