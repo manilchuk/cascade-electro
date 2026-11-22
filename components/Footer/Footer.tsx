@@ -60,9 +60,16 @@ export default function Footer() {
             <p className={styles.contactItem}>
               <a href="mailto:ukrenergo21@gmail.com">ukrenergo21@gmail.com</a>
             </p>
-            <p className={styles.contactItem}>
-              вул. Шовковична, 13/2, офіс 11, Київ
-            </p>
+
+            <div className={styles.addressBlock}>
+              <p className={styles.contactItem}>
+                вул. Шовковична, буд. 13/2, офіс 11, Київ
+              </p>
+              <p className={styles.contactItem}>
+                вул. Машинобудівників, буд. 23, прим. 4, Вишневе (Київська
+                область)
+              </p>
+            </div>
           </div>
         </div>
 
