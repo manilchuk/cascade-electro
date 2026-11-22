@@ -1,8 +1,8 @@
 /* --- Секція форми внизу сторінки --- */
 .section {
-  background-color: var(--color-light-gray); /* Змінили на світло-сірий */
+  background-color: var(--color-light-gray);
   padding: 80px 0;
-  color: var(--color-dark); /* Змінили на темний текст */
+  color: var(--color-dark);
 }
 
 .container {
@@ -33,11 +33,11 @@
 
 .subtitle {
   font-size: 1.125rem;
-  color: var(--color-gray); /* Змінили на сірий */
+  color: var(--color-gray);
   margin-bottom: 32px;
 }
 
-/* --- Спільні стилі для форм (і в секції, і в модалці) --- */
+/* --- Спільні стилі для форм --- */
 .form {
   display: flex;
   flex-direction: column;
@@ -54,15 +54,15 @@
 .label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-dark); /* Змінили на темний */
+  color: var(--color-dark);
 }
 
 .input {
   width: 100%;
   padding: 14px 16px;
   border-radius: 8px;
-  border: 1px solid #d1d5db; /* Світло-сіра рамка */
-  background-color: var(--color-white); /* Білий фон полів */
+  border: 1px solid #d1d5db;
+  background-color: var(--color-white);
   color: var(--color-dark);
   font-size: 1rem;
   font-family: inherit;
@@ -74,7 +74,7 @@
 .input:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1); /* Легке зелене світіння */
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
 }
 
 .input::placeholder {
@@ -117,9 +117,8 @@
   position: fixed;
   bottom: 24px;
   left: 24px;
-  width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 30px; /* Заокруглення для форми "пігулки" */
   background-color: var(--color-primary);
   color: var(--color-white);
   display: flex;
@@ -129,20 +128,80 @@
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(22, 163, 74, 0.4);
   z-index: 900;
-  transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.fab:hover {
-  transform: scale(1.1);
-  background-color: var(--color-primary-hover);
+/* Стан з текстом (розширена) */
+.fabExpanded {
+  width: 220px;
+  padding: 0 24px;
+  animation: pulse-expanded 2s infinite;
 }
 
+/* Стан з іконкою (кругла) */
+.fabCollapsed {
+  width: 60px;
+  padding: 0;
+  animation: pulse-collapsed 2s infinite;
+}
+
+/* Текст всередині кнопки */
+.fabText {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Іконка телефону */
 .fabIcon {
   width: 28px;
   height: 28px;
   fill: currentColor;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Анімація пульсації для розширеної кнопки */
+@keyframes pulse-expanded {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+
+/* Анімація пульсації для круглої кнопки */
+@keyframes pulse-collapsed {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(22, 163, 74, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+    transform: scale(1);
+  }
+}
+
+/* Анімація появи тексту/іконки */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* --- Модальне вікно --- */

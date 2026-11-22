@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Contact.module.css";
 
 // Іконка телефону (використовуємо спрайт)
@@ -49,16 +49,26 @@ export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [phone, setPhone] = useState("");
 
+  // Стан для анімації FAB
+  const [showText, setShowText] = useState(true);
+
+  // Ефект для постійного чергування тексту та іконки
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowText((prev) => !prev);
+    }, 3000); // Кожні 3 секунди
+
+    return () => clearInterval(interval);
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Імітація відправки на сервер
     setTimeout(() => {
       setIsLoading(false);
       setIsSubmitted(true);
 
-      // Якщо це модалка, закриваємо її через 3 секунди
       if (isModalOpen) {
         setTimeout(() => {
           setIsModalOpen(false);
@@ -71,12 +81,12 @@ export default function ContactForm() {
 
   const openModal = () => {
     setIsModalOpen(true);
-    setIsSubmitted(false); // Скидаємо стан при відкритті
+    setIsSubmitted(false);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setTimeout(() => setIsSubmitted(false), 300); // Скидаємо після анімації
+    setTimeout(() => setIsSubmitted(false), 300);
   };
 
   return (
@@ -148,11 +158,15 @@ export default function ContactForm() {
 
       {/* --- Плаваюча кнопка (FAB) --- */}
       <button
-        className={styles.fab}
+        className={`${styles.fab} ${showText ? styles.fabExpanded : styles.fabCollapsed}`}
         onClick={openModal}
         aria-label="Замовити дзвінок"
       >
-        <PhoneIcon />
+        {showText ? (
+          <span className={styles.fabText}>Замовити дзвінок</span>
+        ) : (
+          <PhoneIcon />
+        )}
       </button>
 
       {/* --- Модальне вікно --- */}
