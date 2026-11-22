@@ -30,19 +30,17 @@ export default function Header() {
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     closeMenu();
 
+    // Якщо ми вже на головній сторінці, просто скролимо догори
     if (window.location.pathname === "/") {
       e.preventDefault();
-
-      // Скролимо догори
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
-
-      // ВАЖЛИВО: Очищаємо хеш з URL, щоб якірні посилання працювали знову
-      // Використовуємо replaceState, щоб не додавати новий запис в історію браузера
       window.history.replaceState(null, "", window.location.pathname);
     }
+    // Якщо на іншій сторінці, Link зробить перехід на "/",
+    // а useEffect на головній сторінці скине скрол (бо хешу немає).
   };
 
   return (
@@ -60,22 +58,22 @@ export default function Header() {
         </Link>
 
         <nav className={styles.nav}>
-          <Link href="#catalog" className={styles.navLink}>
+          <Link href="/#catalog" className={styles.navLink}>
             Каталог
           </Link>
-          <Link href="#about" className={styles.navLink}>
+          <Link href="/#about" className={styles.navLink}>
             Про нас
           </Link>
-          <Link href="#advantages" className={styles.navLink}>
+          <Link href="/#advantages" className={styles.navLink}>
             Переваги
           </Link>
-          <Link href="#contacts" className={styles.navLink}>
+          <Link href="/#contacts" className={styles.navLink}>
             Контакти
           </Link>
         </nav>
 
         <div className={styles.contactBlock}>
-          <a href="tel:+380000000000" className={styles.phone}>
+          <a href="tel:+380981117018" className={styles.phone}>
             +38 (098) 111-70-18
           </a>
           <button className={styles.btn}>Отримати прайс</button>
@@ -97,28 +95,28 @@ export default function Header() {
       >
         <nav className={styles.mobileNav}>
           <Link
-            href="#catalog"
+            href="/#catalog"
             className={styles.mobileNavLink}
             onClick={closeMenu}
           >
             Каталог
           </Link>
           <Link
-            href="#about"
+            href="/#about"
             className={styles.mobileNavLink}
             onClick={closeMenu}
           >
             Про нас
           </Link>
           <Link
-            href="#advantages"
+            href="/#advantages"
             className={styles.mobileNavLink}
             onClick={closeMenu}
           >
             Переваги
           </Link>
           <Link
-            href="#contacts"
+            href="/#contacts"
             className={styles.mobileNavLink}
             onClick={closeMenu}
           >
@@ -127,8 +125,8 @@ export default function Header() {
         </nav>
 
         <div className={styles.mobileContactBlock}>
-          <a href="tel:+380000000000" className={styles.mobilePhone}>
-            +38 (000) 000-00-00
+          <a href="tel:+380981117018" className={styles.mobilePhone}>
+            +38 (098) 111-70-18
           </a>
           <button className={styles.mobileBtn}>Отримати прайс</button>
         </div>

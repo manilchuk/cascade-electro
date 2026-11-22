@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect } from "react";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Catalog from "@/components/Catalog/Catalog";
@@ -13,6 +16,17 @@ import ContactForm from "@/components/Contact/ContactForm";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
+  useEffect(() => {
+    // Перевіряємо, чи є в URL хеш (наприклад, #catalog)
+    const hash = window.location.hash;
+
+    // Якщо хешу немає, скролимо догори (це вирішує проблему з футером)
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+    // Якщо хеш є, ми нічого не робимо — браузер сам прокрутить до секції
+  }, []);
+
   return (
     <>
       <Header />
