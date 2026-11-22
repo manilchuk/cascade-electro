@@ -81,15 +81,12 @@ export default function Contacts() {
                 <MapPinIcon />
               </div>
               <div className={styles.infoContent}>
-                <h3>Адреси офісу та складу</h3>
+                <h3>Адреса</h3>
                 <div className={styles.addressBlock}>
+                  <p>вул. Шовковична, буд. 13/2, офіс 11, Київ</p>
                   <p>
-                    <strong>Офіс:</strong> вул. Шовковична, буд. 13/2, офіс 11,
-                    Київ
-                  </p>
-                  <p>
-                    <strong>Склад:</strong> вулиця Машинобудівників, буд.23,
-                    прим.4, Вишневе (Київська область)
+                    вул. Машинобудівників, буд.23, прим.4, Вишневе (Київська
+                    область)
                   </p>
                 </div>
               </div>
@@ -304,7 +301,7 @@ export default function Contacts() {
           {/* Права колонка: Карта */}
           <div className={styles.mapWrapper}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.83632065341!2d30.530272977144026!3d50.44414937159099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cfab4483a97b%3A0xc9e5dad58cc01ada!2z0LLRg9C70LjRhtGPINCo0L7QstC60L7QstC40YfQvdCwLCAxMy8yLCDQmtC40ZfQsiwgMDEwMjE!5e0!3m2!1suk!2sua!4v1795207392032!5m2!1suk!2sua"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.3804908226116!2d30.3737534!3d50.396746199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cb425fbf4509%3A0x782e2cd80a9dc45c!2z0KLQntCSIMKr0JrQsNGB0LrQsNC0INCV0LvQtdC60YLRgNC-wrs!5e0!3m2!1suk!2sua!4v1795359318467!5m2!1suk!2sua"
               title="Мапа офісу"
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"

@@ -76,7 +76,7 @@ export default function Header() {
 
         <div className={styles.contactBlock}>
           <a href="tel:+380000000000" className={styles.phone}>
-            +38 (000) 000-00-00
+            +38 (098) 111-70-18
           </a>
           <button className={styles.btn}>Отримати прайс</button>
         </div>
