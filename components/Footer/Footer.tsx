@@ -29,22 +29,22 @@ export default function Footer() {
             <h3>Навігація</h3>
             <ul className={styles.navList}>
               <li>
-                <Link href="#catalog" className={styles.navLink}>
+                <Link href="/#catalog" className={styles.navLink}>
                   Каталог
                 </Link>
               </li>
               <li>
-                <Link href="#about" className={styles.navLink}>
+                <Link href="/#about" className={styles.navLink}>
                   Про нас
                 </Link>
               </li>
               <li>
-                <Link href="#advantages" className={styles.navLink}>
+                <Link href="/#advantages" className={styles.navLink}>
                   Переваги
                 </Link>
               </li>
               <li>
-                <Link href="#contacts" className={styles.navLink}>
+                <Link href="/#contacts" className={styles.navLink}>
                   Контакти
                 </Link>
               </li>

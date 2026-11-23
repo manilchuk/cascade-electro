@@ -80,8 +80,7 @@ export default function DeliveryPayment() {
               <li className={styles.listItem}>
                 <CheckIcon />
                 <div>
-                  <strong>Самовивіз</strong> — з нашого офісу або складу у
-                  Вишневому.
+                  <strong>Самовивіз</strong> — з нашого складу у Вишневому.
                 </div>
               </li>
             </ul>
