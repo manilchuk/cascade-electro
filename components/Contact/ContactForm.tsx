@@ -117,7 +117,7 @@ export default function ContactForm() {
                     className={styles.input}
                     type="text"
                     id="name"
-                    placeholder="Іван Іванов"
+                    placeholder=""
                     required
                   />
                 </div>
@@ -129,7 +129,7 @@ export default function ContactForm() {
                     className={styles.input}
                     type="tel"
                     id="phone"
-                    placeholder="+38 (0__) ___-__-__"
+                    placeholder=""
                     required
                   />
                 </div>
