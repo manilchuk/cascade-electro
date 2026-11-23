@@ -96,12 +96,6 @@ const categories = [
     image: "/Catalog/emergency-power-supply-unit.webp",
     placeholder: "🚨",
   },
-  {
-    id: 16,
-    title: "Подарунки від 3000 грн.",
-    image: "/Catalog/gifts1.webp",
-    placeholder: "🎁",
-  },
 ];
 
 export default function Catalog() {
