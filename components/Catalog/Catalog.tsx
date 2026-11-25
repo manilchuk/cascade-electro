@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./Catalog.module.css";
+import ProductModal from "@/components/ProductModal/ProductModal";
 
 // Повний перелік категорій
 const categories = [
@@ -11,95 +12,234 @@ const categories = [
     title: "Роз'єднувачі",
     image: "/Catalog/electrical-disconnector-2x.png",
     placeholder: "🔌",
+    products: null, // Поки що немає списку
   },
   {
     id: 2,
     title: "Кабель і провід",
     image: "/Catalog/cable-and-wire-2x.png",
     placeholder: "⚡",
+    products: null,
   },
   {
     id: 3,
-    title: "Трансформатор понижуючий",
+    title: "Трансформатори",
     image: "/Catalog/step-down-transformer.webp",
     placeholder: "🔋",
-  },
-  {
-    id: 4,
-    title: "Вимірювальні трансформатори струму",
-    image: "/Catalog/current-transformer1.webp",
-    placeholder: "📊",
+    products: [
+      {
+        category: "ТСЗ – стандарт (трьохфазні)",
+        items: [
+          { name: "ТСЗ-1,6 кВт", specs: "1,6 кВт; 380-220 / 36; 40; 42В" },
+          { name: "ТСЗ-2,5 кВт", specs: "2,5 кВт; 380-220 / 36; 40; 42В" },
+          { name: "ТСЗ-4,0 кВт", specs: "4,0 кВт; 380-220 / 36; 40; 42В" },
+          { name: "ТСЗ-5,0 кВт", specs: "5,0 кВт; 380-220 / 36; 40; 42В" },
+          { name: "ТСЗ-6,3 кВт", specs: "6,3 кВт; 380-220 / 36; 40; 42В" },
+          { name: "ТСЗ-7,5 кВт", specs: "7,5 кВт; 380-220 / 36; 40; 42В" },
+          { name: "ТСЗ-8,0 кВт", specs: "8,0 кВт; 380-220 / 36; 40; 42В" },
+          { name: "ТСЗ-10,0 кВт", specs: "10,0 кВт; 380-220 / 36; 40; 42В" },
+          {
+            name: "ТСЗ-12,0 кВт",
+            specs: "12,0 кВт; 380-220 / 36; 40; 42В; 220В",
+          },
+          {
+            name: "ТСЗ-16,0 кВт",
+            specs: "16,0 кВт; 380-220 / 36; 40; 42В; 220В",
+          },
+          {
+            name: "ТСЗ-20,0 кВт",
+            specs: "20,0 кВт; 380-220 / 36; 40; 42В; 220В",
+          },
+          {
+            name: "ТСЗ-25,0 кВт",
+            specs: "25,0 кВт; 380-220 / 36; 40; 42В; 220В",
+          },
+          {
+            name: "ТСЗ-30,0 кВт",
+            specs: "30,0 кВт; 380-220 / 36; 40; 42В; 220В",
+          },
+          {
+            name: "ТСЗ-35,0 кВт",
+            specs: "35,0 кВт; 380-220 / 36; 40; 42В; 220В",
+          },
+          {
+            name: "ТСЗ-40,0 кВт",
+            specs: "40,0 кВт; 380-220 / 36; 40; 42В; 220В",
+          },
+          {
+            name: "ТСЗ-50,0 кВт",
+            specs: "50,0 кВт; 380-220 / 36; 40; 42В; 220В",
+          },
+          {
+            name: "ТСЗ-63,0 кВт",
+            specs: "63,0 кВт; 380-220 / 36; 40; 42В; 220В",
+          },
+          {
+            name: "ТСЗ-70,0 кВт",
+            specs: "70,0 кВт; 380-220 / 36; 40; 42В; 220В",
+          },
+        ],
+      },
+      {
+        category: "ОСЗ — стандарт (однофазні закриті)",
+        items: [
+          { name: "ОСЗ-1,6 кВт", specs: "1,6 кВт; 220 / 36; 40; 42В" },
+          { name: "ОСЗ-2,5 кВт", specs: "2,5 кВт; 220 / 36; 40; 42В" },
+          { name: "ОСЗ-4,0 кВт", specs: "4,0 кВт; 220 / 36; 40; 42В" },
+          { name: "ОСЗ-5,0 кВт", specs: "5,0 кВт; 220 / 36; 40; 42В" },
+          { name: "ОСЗ-6,3 кВт", specs: "6,3 кВт; 220 / 36; 40; 42В" },
+          {
+            name: "ОСЗ-1,6 кВт",
+            specs: "1,6 кВт; 220-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ОСЗ-2,5 кВт",
+            specs: "2,5 кВт; 220-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ОСЗ-4,0 кВт",
+            specs: "4,0 кВт; 220-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ОСЗ-5,0 кВт",
+            specs: "5,0 кВт; 220-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ОСЗ-6,3 кВт",
+            specs: "6,3 кВт; 220-220/380; 220; 110; 127; 12; 24В",
+          },
+        ],
+      },
+      {
+        category: "Нестандартні типу ТСЗ/ОСЗ",
+        items: [
+          {
+            name: "ТСЗ-1,6 кВт",
+            specs: "1,6 кВт; 380-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ТСЗ-2,5 кВт",
+            specs: "2,5 кВт; 380-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ТСЗ-4,0 кВт",
+            specs: "4,0 кВт; 380-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ТСЗ-5,0 кВт",
+            specs: "5,0 кВт; 380-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ТСЗ-6,3 кВт",
+            specs: "6,3 кВт; 380-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ТСЗ-7,5 кВт",
+            specs: "7,5 кВт; 380-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ТСЗ-8,0 кВт",
+            specs: "8,0 кВт; 380-220/380; 220; 110; 127; 12; 24В",
+          },
+          {
+            name: "ТСЗ-10,0 кВт",
+            specs: "10,0 кВт; 380-220/380; 220; 110; 127; 12; 24В",
+          },
+        ],
+      },
+      {
+        category: "Комплектні трансформаторні підстанції прогріву бетону",
+        items: [
+          {
+            name: "КТП-ОБ-63",
+            specs: "63кВА; 380В; НН-49, 60, 70, 85, 103, 121В",
+          },
+          {
+            name: "КТП-ОБ-80",
+            specs: "80кВА; 380В; НН-49, 60, 70, 85, 103, 121В",
+          },
+        ],
+      },
+    ],
   },
   {
     id: 5,
     title: "Трансформатори прогріву бетону",
     image: "/Catalog/concrete-heating-station.webp",
     placeholder: "🏗️",
-  },
-  {
-    id: 6,
-    title: "Трансформатори струму",
-    image: "/Catalog/current-transformer.webp",
-    placeholder: "🔌",
+    products: null,
   },
   {
     id: 7,
     title: "Щити розподільчі та аксесуари",
     image: "/Catalog/distribution-boards-and-accessories.webp",
     placeholder: "🗄️",
+    products: null,
   },
   {
     id: 8,
     title: "Світлодіодні лампи",
     image: "/Catalog/LED-lamps.webp",
     placeholder: "💡",
+    products: null,
   },
   {
     id: 9,
     title: "Світлодіодні світильники",
     image: "/Catalog/LED-light-fixtures.webp",
     placeholder: "🔦",
+    products: null,
   },
   {
     id: 10,
     title: "Вуличне освітлення",
     image: "/Catalog/street-lighting.webp",
     placeholder: "🌃",
+    products: null,
   },
   {
     id: 11,
     title: "Торговельне освітлення",
     image: "/Catalog/retail-lighting.webp",
     placeholder: "🏬",
+    products: null,
   },
   {
     id: 12,
     title: "Настільні лампи",
     image: "/Catalog/table-lamps.webp",
     placeholder: "🛋️",
+    products: null,
   },
   {
     id: 13,
     title: "Промислово-офісне світло",
     image: "/Catalog/industrial-and-office-lighting.webp",
     placeholder: "🏭",
+    products: null,
   },
   {
     id: 14,
     title: "Розумний дім",
     image: "/Catalog/smart-home.webp",
     placeholder: "🏠",
+    products: null,
   },
   {
     id: 15,
     title: "Блоки аварійного живлення",
     image: "/Catalog/emergency-power-supply-unit.webp",
     placeholder: "🚨",
+    products: null,
   },
 ];
 
 export default function Catalog() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<
+    (typeof categories)[0] | null
+  >(null);
 
   const nextSlide = () => {
     setActiveIndex((prev) => (prev + 1) % categories.length);
@@ -111,17 +251,25 @@ export default function Catalog() {
     );
   };
 
+  const handleCardClick = (cat: (typeof categories)[0]) => {
+    if (cat.products) {
+      setSelectedCategory(cat);
+      setModalOpen(true);
+    } else {
+      // Якщо немає списку товарів, просто робимо картку активною
+      setActiveIndex(categories.findIndex((c) => c.id === cat.id));
+    }
+  };
+
   // Функція для розрахунку зміщення для кожної картки
   const getCardStyle = (index: number) => {
     const diff = index - activeIndex;
     const total = categories.length;
 
-    // Нормалізуємо різницю, щоб вона була в межах від -total/2 до total/2
     let normalizedDiff = diff;
     if (diff > total / 2) normalizedDiff -= total;
     if (diff < -total / 2) normalizedDiff += total;
 
-    // Якщо картка далі ніж на 1 позицію від центру — ховаємо її
     if (Math.abs(normalizedDiff) > 1) {
       return {
         className: styles.cardHidden,
@@ -131,12 +279,8 @@ export default function Catalog() {
       };
     }
 
-    // Відстань між картками (залежить від розміру екрану)
-    // Для десктопу 300px, для мобільних 200px
-    // Ми використовуємо CSS-змінну, яку задамо в модулі
     const offset = normalizedDiff * 300;
 
-    // Якщо це центральна картка
     if (normalizedDiff === 0) {
       return {
         className: styles.cardActive,
@@ -144,7 +288,6 @@ export default function Catalog() {
       };
     }
 
-    // Бокові картки (ліва або права)
     return {
       className: styles.cardSide,
       style: { "--offset": `${offset}px` } as React.CSSProperties,
@@ -162,7 +305,6 @@ export default function Catalog() {
         </div>
 
         <div className={styles.carouselWrapper}>
-          {/* Кнопка "Назад" */}
           <button
             className={`${styles.navBtn} ${styles.navBtnPrev}`}
             onClick={prevSlide}
@@ -190,7 +332,7 @@ export default function Catalog() {
                   key={cat.id}
                   className={`${styles.card} ${className}`}
                   style={style}
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => handleCardClick(cat)}
                 >
                   <div className={styles.cardImageWrapper}>
                     {cat.image ? (
@@ -213,7 +355,6 @@ export default function Catalog() {
             })}
           </div>
 
-          {/* Кнопка "Вперед" */}
           <button
             className={`${styles.navBtn} ${styles.navBtnNext}`}
             onClick={nextSlide}
@@ -234,7 +375,6 @@ export default function Catalog() {
           </button>
         </div>
 
-        {/* Індикатори */}
         <div className={styles.dots}>
           {categories.map((_, index) => (
             <button
@@ -246,6 +386,16 @@ export default function Catalog() {
           ))}
         </div>
       </div>
+
+      {/* Модальне вікно з товарами */}
+      {selectedCategory && (
+        <ProductModal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          title={selectedCategory.title}
+          products={selectedCategory.products || []}
+        />
+      )}
     </section>
   );
 }

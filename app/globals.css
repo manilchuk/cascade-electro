@@ -45,3 +45,14 @@ button {
   overflow: hidden !important;
   height: 100vh !important;
 }
+
+/* Блокування скролу при відкритому модальному вікні */
+html.modal-open,
+body.modal-open {
+  overflow: hidden !important;
+  /* Прибираємо height: 100vh, щоб не скидати скрол */
+  padding-right: var(
+    --scrollbar-width,
+    0
+  ); /* Компенсація зникнення скролбару */
+}
