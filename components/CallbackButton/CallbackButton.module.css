@@ -1,0 +1,267 @@
+/* Стилі для кнопки в хедері */
+.headerBtn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.headerBtn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Стилі для FAB (як було) */
+.fab {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(22, 163, 74, 0.4);
+  z-index: 900;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.fabExpanded {
+  width: 220px;
+  padding: 0 24px;
+  animation: pulse-expanded 2s infinite;
+}
+
+.fabCollapsed {
+  width: 60px;
+  padding: 0;
+  animation: pulse-collapsed 2s infinite;
+}
+
+.fabText {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  animation: fadeIn 0.5s ease;
+}
+
+.fabIcon {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Анімації (ті самі, що були) */
+@keyframes pulse-expanded {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+
+@keyframes pulse-collapsed {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(22, 163, 74, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Модальне вікно (спільне) */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.modalOverlayOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modalContent {
+  background-color: var(--color-white);
+  padding: 32px 24px;
+  border-radius: 16px;
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  color: var(--color-dark);
+}
+
+.modalOverlayOpen .modalContent {
+  transform: translateY(0);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gray);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.closeBtn:hover {
+  color: var(--color-dark);
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.modalSubtitle {
+  font-size: 0.95rem;
+  color: var(--color-gray);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Форма */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background-color: var(--color-light-gray);
+  color: var(--color-dark);
+  font-size: 1rem;
+  font-family: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.submitBtn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+  margin-top: 8px;
+}
+
+.submitBtn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Іконка успіху */
+.successMessage {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  color: var(--color-primary);
+  margin: 0 auto 16px;
+}
+
+.successText {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}

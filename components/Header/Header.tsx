@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.css";
+import CallbackButton from "@/components/CallbackButton/CallbackButton";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +31,6 @@ export default function Header() {
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     closeMenu();
 
-    // Якщо ми вже на головній сторінці, просто скролимо догори
     if (window.location.pathname === "/") {
       e.preventDefault();
       window.scrollTo({
@@ -39,8 +39,6 @@ export default function Header() {
       });
       window.history.replaceState(null, "", window.location.pathname);
     }
-    // Якщо на іншій сторінці, Link зробить перехід на "/",
-    // а useEffect на головній сторінці скине скрол (бо хешу немає).
   };
 
   return (
@@ -76,7 +74,7 @@ export default function Header() {
           <a href="tel:+380981117018" className={styles.phone}>
             +38 (098) 111-70-18
           </a>
-          <button className={styles.btn}>Отримати прайс</button>
+          <CallbackButton variant="header" />
         </div>
 
         <button
@@ -128,7 +126,7 @@ export default function Header() {
           <a href="tel:+380981117018" className={styles.mobilePhone}>
             +38 (098) 111-70-18
           </a>
-          <button className={styles.mobileBtn}>Отримати прайс</button>
+          <CallbackButton variant="header" />
         </div>
       </div>
     </header>
