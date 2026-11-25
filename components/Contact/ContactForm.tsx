@@ -22,11 +22,11 @@ const SuccessIcon = () => (
 export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
@@ -34,14 +34,14 @@ export default function ContactForm() {
       const response = await fetch("/api/telegram", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone, name, message }),
+        body: JSON.stringify({ name, phone, message }),
       });
 
       if (!response.ok) throw new Error("Failed to send");
 
       setIsSubmitted(true);
-      setPhone("");
       setName("");
+      setPhone("");
       setMessage("");
     } catch (error) {
       console.error(error);
