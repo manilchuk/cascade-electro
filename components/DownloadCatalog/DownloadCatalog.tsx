@@ -30,15 +30,32 @@ export default function DownloadCatalog() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Виправлено: React.FormEvent -> React.SubmitEvent
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Імітація відправки
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const response = await fetch("/api/telegram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          phone: email,
+          name: "Запит прайс-листа",
+          message: `Клієнт хоче отримати прайс-лист на email: ${email}`,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Failed to send");
+
       setIsSubmitted(true);
-    }, 1000);
+      setEmail("");
+    } catch (error) {
+      console.error(error);
+      alert("Помилка відправки. Спробуйте ще раз.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -56,7 +73,8 @@ export default function DownloadCatalog() {
           <div className={styles.formWrapper}>
             {isSubmitted ? (
               <div className={styles.successMsg}>
-                Дякуємо! Прайс-лист відправлено на вашу пошту.
+                Дякуємо! Найближчим часом менеджери відправлять прайс-лист на
+                вашу пошту.
               </div>
             ) : (
               <form className={styles.form} onSubmit={handleSubmit}>
@@ -78,7 +96,7 @@ export default function DownloadCatalog() {
                       "Відправка..."
                     ) : (
                       <>
-                        <DownloadIcon /> Завантажити
+                        <DownloadIcon /> Замовити
                       </>
                     )}
                   </button>

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
-    const { phone } = await request.json();
+    const { phone, name, message } = await request.json();
 
     if (!phone) {
       return NextResponse.json({ error: "Phone is required" }, { status: 400 });
@@ -18,9 +18,10 @@ export async function POST(request: Request) {
       );
     }
 
-    const text = `🔔 <b>Нова заявка на дзвінок!</b>\n\n📞 Телефон: ${phone}`;
+    let text = `🔔 <b>Нова заявка!</b>\n\n📞 Телефон/Email: ${phone}`;
+    if (name) text += `\n👤 Ім'я: ${name}`;
+    if (message) text += `\n💬 Повідомлення: ${message}`;
 
-    // URL вашого Cloudflare Worker (без слеша в кінці)
     const workerUrl = "https://ancient-bush-349d.manilchuk-v.workers.dev";
     const url = `${workerUrl}/bot${botToken}/sendMessage`;
 
@@ -37,7 +38,6 @@ export async function POST(request: Request) {
     const data = await response.json();
 
     if (!response.ok) {
-      // Логуємо помилку тільки якщо вона є
       console.error("Telegram error:", data);
       return NextResponse.json(
         { error: "Failed to send message", details: data },
