@@ -74,7 +74,7 @@ export default function Header() {
           <a href="tel:+380981117018" className={styles.phone}>
             +38 (098) 111-70-18
           </a>
-          <CallbackButton variant="header" />
+          <CallbackButton />
         </div>
 
         <button
@@ -126,7 +126,7 @@ export default function Header() {
           <a href="tel:+380981117018" className={styles.mobilePhone}>
             +38 (098) 111-70-18
           </a>
-          <CallbackButton variant="header" />
+          <CallbackButton />
         </div>
       </div>
     </header>
