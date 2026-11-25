@@ -71,9 +71,10 @@ export default function Header() {
         </nav>
 
         <div className={styles.contactBlock}>
-          <a href="tel:+380981117018" className={styles.phone}>
-            +38 (098) 111-70-18
-          </a>
+          <div className={styles.phone}>
+            <a href="tel:+380981117018">+38 (098) 111-70-18</a>
+            <a href="mailto:ukrenergo21@gmail.com">ukrenergo21@gmail.com</a>
+          </div>
           <CallbackButton />
         </div>
 
@@ -123,9 +124,10 @@ export default function Header() {
         </nav>
 
         <div className={styles.mobileContactBlock}>
-          <a href="tel:+380981117018" className={styles.mobilePhone}>
-            +38 (098) 111-70-18
-          </a>
+          <div className={styles.mobilePhone}>
+            <a href="tel:+380981117018">+38 (098) 111-70-18</a>
+            <a href="mailto:ukrenergo21@gmail.com">ukrenergo21@gmail.com</a>
+          </div>
           <CallbackButton />
         </div>
       </div>

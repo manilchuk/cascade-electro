@@ -106,11 +106,6 @@
   color: var(--color-gray);
 }
 
-.addressBlock strong {
-  color: var(--color-dark);
-  font-weight: 600;
-}
-
 /* Список менеджерів */
 .managersList {
   list-style: none;
@@ -118,13 +113,26 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0; /* Прибираємо відступ, бо використовуємо розділювач */
 }
 
 .managerItem {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 16px 0; /* Додаємо відступи зверху та знизу */
+  border-bottom: 1px solid rgba(22, 163, 74, 0.2); /* Тонка зелена лінія */
+}
+
+/* Прибираємо лінію для останнього елемента */
+.managerItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Прибираємо верхній відступ для першого елемента */
+.managerItem:first-child {
+  padding-top: 0;
 }
 
 .managerPhone {
@@ -137,9 +145,21 @@
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--color-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .managerPhone a:hover {
+  color: var(--color-primary);
+}
+
+.managerPhone a[href^="mailto:"] {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-gray);
+}
+
+.managerPhone a[href^="mailto:"]:hover {
   color: var(--color-primary);
 }
 

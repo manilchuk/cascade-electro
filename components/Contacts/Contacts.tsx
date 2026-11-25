@@ -104,6 +104,9 @@ export default function Contacts() {
                   <li className={styles.managerItem}>
                     <div className={styles.managerPhone}>
                       <a href="tel:+380501445993">+380 (50) 144 59 93</a>
+                      <a href="mailto:ukrenergo26@gmail.com">
+                        ukrenergo26@gmail.com
+                      </a>
                       <span className={styles.managerName}>Олена Ятманова</span>
                     </div>
                     <div className={styles.messengerIcons}>
@@ -159,6 +162,9 @@ export default function Contacts() {
                   <li className={styles.managerItem}>
                     <div className={styles.managerPhone}>
                       <a href="tel:+380952429114">+380 (95) 242 91 14</a>
+                      <a href="mailto:ukrenergo25@gmail.com">
+                        ukrenergo25@gmail.com
+                      </a>
                       <span className={styles.managerName}>
                         Дмитро Ковальчук
                       </span>
@@ -216,6 +222,9 @@ export default function Contacts() {
                   <li className={styles.managerItem}>
                     <div className={styles.managerPhone}>
                       <a href="tel:+380660085654">+380 (66) 008 56 54</a>
+                      <a href="mailto:ukrenergo22@gmail.com">
+                        ukrenergo22@gmail.com
+                      </a>
                       <span className={styles.managerName}>Любов Левченко</span>
                     </div>
                     <div className={styles.messengerIcons}>
@@ -267,21 +276,6 @@ export default function Contacts() {
                     </div>
                   </li>
                 </ul>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className={styles.infoItem}>
-              <div className={styles.iconWrapper}>
-                <MailIcon />
-              </div>
-              <div className={styles.infoContent}>
-                <h3>Електронна пошта</h3>
-                <p>
-                  <a href="mailto:ukrenergo21@gmail.com">
-                    ukrenergo21@gmail.com
-                  </a>
-                </p>
               </div>
             </div>
 

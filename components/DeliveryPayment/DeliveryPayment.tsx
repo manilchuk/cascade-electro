@@ -106,12 +106,6 @@ export default function DeliveryPayment() {
                   <strong>Безготівковий з ПДВ</strong> — для юридичних осіб.
                 </div>
               </li>
-              <li className={styles.listItem}>
-                <CheckIcon />
-                <div>
-                  <strong>Готівкою</strong> — при самовивозі або кур'єру.
-                </div>
-              </li>
             </ul>
           </div>
         </div>
