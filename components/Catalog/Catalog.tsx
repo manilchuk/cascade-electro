@@ -12,7 +12,7 @@ const categories = [
     title: "Роз'єднувачі",
     image: "/Catalog/electrical-disconnector-2x.png",
     placeholder: "🔌",
-    products: null, // Поки що немає списку
+    products: null,
   },
   {
     id: 2,
@@ -2315,6 +2315,8 @@ const categories = [
               "Світильник модульний COMBEE Petrol LED 150W 5000K 150*70 TRS 04",
           },
         ],
+      },
+      {
         category: "Вбудований світильник зі світлорегулюванням",
         items: [
           {
