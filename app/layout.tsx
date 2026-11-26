@@ -5,6 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin", "cyrillic"], display: "swap" });
 
 export const metadata: Metadata = {
+  // ДОДАНО: Базова URL-адреса для правильного формування абсолютних шляхів
+  metadataBase: new URL("https://www.cascade-electro.com.ua"),
+
   // Основні SEO-налаштування
   title: {
     default: "КАСКАД ЕЛЕКТРО | Енергія надійних рішень",
@@ -34,14 +37,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "uk_UA",
-    url: "https://cascadelectro.prom.ua", // Замініть на реальний домен, коли буде
+    url: "https://www.cascade-electro.com.ua",
     siteName: "КАСКАД ЕЛЕКТРО",
     title: "КАСКАД ЕЛЕКТРО | Енергія надійних рішень",
     description:
       "Широкий асортимент електротехнічних товарів для дому, бізнесу та професійного монтажу. Кабель, автоматика, щити, розетки, освітлення та лічильники.",
     images: [
       {
-        url: "/OG-image.webp",
+        url: "/OG-image.webp", // Завдяки metadataBase це стане абсолютним URL
         width: 1200,
         height: 630,
         alt: "КАСКАД ЕЛЕКТРО - Електротехніка",
@@ -74,7 +77,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   alternates: {
-    canonical: "https://cascadelectro.prom.ua", // Замініть на реальний домен
+    canonical: "https://www.cascade-electro.com.ua",
   },
 };
 
